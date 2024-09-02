@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Ubicaciones
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Ubicaciones</h1>
+<div id="map" style="height: 80vh; width: 81vw;";></div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    var map = L.map('map').setView([6.242378957669526, -75.58936550444994], 15);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    var marker = L.marker([6.2413531058765965, -75.58754782403683]).addTo(map);
+    marker.bindPopup("<b>Local unicentro:</b><br>Telefono: 123 456 78 90<br>Horario: 12pm - 8pm").openPopup();
+    var marker2 = L.marker([6.245097515427585, -75.58942149179282]).addTo(map);
+    marker2.bindPopup("<b>Local carrera 70:</b><br>Telefono: 123 567 78 90<br>Horario: 12pm - 8pm").openPopup();
+</script>
+{% endblock %}

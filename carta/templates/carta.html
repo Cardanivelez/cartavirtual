@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Carta
+{% endblock %}
+
+{% block content %}
+  <h1>Nuestra carta</h1>
+
+<div class="row flew-row g-3">
+    {% for producto in productos %}
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card" style="width: 18rem;">
+        <img src={{producto.img}}
+        class="card-img-top" 
+        alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{producto.name}}</h5>
+          <p class="card-text">{{producto.description}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
